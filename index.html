@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101619">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>IRON &amp; ASH — Bladebound</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="game" aria-label="Sword arena game"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Iron and Ash home"><span class="brand-mark">✦</span><span>IRON <i>&amp;</i> ASH</span></a>
+      <div class="run-label"><span class="live-dot"></span> THE ASHEN YARD <span class="divider">/</span> <span id="statusText">READY TO FIGHT</span></div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound">♪ <span>SOUND ON</span></button>
+    </header>
+    <section class="hud" aria-label="Game status">
+      <div class="health-panel panel">
+        <div class="panel-kicker"><span>VITALS</span><span id="healthText">100 / 100</span></div>
+        <div class="health-track"><div class="health-fill" id="healthFill"></div><span class="health-glint"></span></div>
+        <div class="stamina-row"><span>STEEL</span><div class="stamina-track"><div id="staminaFill"></div></div><span id="staminaText">READY</span></div>
+      </div>
+      <div class="wave-panel panel"><span class="panel-kicker">CURRENT TRIAL</span><div class="wave-number" id="waveText">01 <small>/ 05</small></div><div class="wave-caption" id="waveCaption">THE FIRST CUT</div></div>
+      <div class="score-panel panel"><span class="panel-kicker">HONOR</span><div class="score-number" id="scoreText">0000</div><div class="score-caption">ENEMIES SLAIN <b id="killsText">0</b></div></div>
+    </section>
+    <div class="bottom-hint" id="bottomHint"><span class="keycap">W A S D</span> MOVE <span class="hint-sep">·</span> <span class="keycap">MOUSE</span> AIM <span class="hint-sep">·</span> <span class="keycap accent-key">CLICK</span> SLASH <span class="hint-sep">·</span> <span class="keycap">SPACE</span> DASH</div>
+    <div class="mobile-controls" id="mobileControls" aria-label="Touch controls">
+      <div class="move-pad"><button data-dir="up" aria-label="Move up">▲</button><div><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button></div></div>
+      <div class="action-pad"><button id="mobileDash" class="dash-control">DASH<span>↗</span></button><button id="mobileAttack" class="attack-control">SLASH <span>⚔</span></button></div>
+    </div>
+    <div class="overlay" id="overlay">
+      <div class="overlay-card">
+        <div class="eyebrow"><span></span> A TRIAL BY STEEL <span></span></div>
+        <h1 id="overlayTitle">BLADE<span>BOUND</span></h1>
+        <p id="overlayCopy">Five trials. No mercy. How long can you hold the yard?</p>
+        <div class="overlay-rule"><span>✦</span></div>
+        <div class="menu-controls"><span><b>WASD</b> MOVE</span><span><b>CLICK</b> ATTACK</span><span><b>SPACE</b> DASH</span></div>
+        <button class="start-button" id="startButton"><span>ENTER THE YARD</span><b>→</b></button>
+        <div class="best-line" id="bestLine">BEST HONOR <b id="bestScore">0000</b></div>
+      </div>
+      <div class="corner-note">EST. IN THE ASHES <span>✦</span> NO. 01</div>
+    </div>
+    <div class="toast" id="toast"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
